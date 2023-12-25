@@ -1,0 +1,16 @@
+[Unit]
+Description=Ark Server MCJE Service
+After=network.target
+
+[Service]
+Type=simple
+User=arkapravo
+Group=arkapravo
+StartLimitBurst=3
+WorkingDirectory=/home/arkapravo/server-mcje
+ExecStart=/home/arkapravo/server-mcje/start-server.sh
+ExecStop=/home/arkapravo/server-mcje/stop-server.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
